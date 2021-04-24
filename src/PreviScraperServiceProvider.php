@@ -4,7 +4,7 @@ namespace Gfarias\PreviScraper;
 
 use Illuminate\Support\ServiceProvider as Provider;
 
-class PreviScraperServciceProvider extends Provider
+class PreviScraperServiceProvider extends Provider
 {
     /**
      * Register the application services.
