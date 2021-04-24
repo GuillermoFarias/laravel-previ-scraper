@@ -45,8 +45,11 @@ o instanciar directamente PreviScraper :
 
 ```php
 $previScraper = new Gfarias\PreviScraper\PreviScraper();
-$previred = $previScraper();
+$previred = $previScraper->previred();
+$sii = $previScraper->sii();
+
 print_r($previred->all());
+print_r($sii->all());
 
 ```
 
