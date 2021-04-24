@@ -32,22 +32,23 @@ class PreviService
         9 => self::MES_SEPTIEMBRE,
         10 => self::MES_OCTUBRE,
         11 => self::MES_NOVIEMBRE,
-        12 => self::MES_DICIEMBRE
+        12 => self::MES_DICIEMBRE,
     ];
 
     /**
-     * getPrevired
+     * getPrevired.
      *
      * @return \Gfarias\PreviService\Sources\Previred
      */
     public function previred(): Previred
     {
         $previred = new Previred();
+
         return $previred->setIndicators();
     }
 
     /**
-     * obtener indicadores de Sii de un periodo específico pasando año y mes
+     * obtener indicadores de Sii de un periodo específico pasando año y mes.
      *
      * @param  string $month
      * @param  int $year
@@ -57,11 +58,11 @@ class PreviService
     {
         $sii = new Sii();
 
-        if (!$month) {
+        if (! $month) {
             $month = self::MESES[intval(date('m'))];
         }
 
-        if (!$year) {
+        if (! $year) {
             $year = date('Y');
         }
 
@@ -69,7 +70,7 @@ class PreviService
     }
 
     /**
-     * obtener indicadores de Sii del periodo actual
+     * obtener indicadores de Sii del periodo actual.
      *
      * @return \Gfarias\PreviService\Sources\Sii
      */
@@ -78,6 +79,7 @@ class PreviService
         $sii = new Sii();
         $month = self::MESES[intval(date('m'))];
         $year = date('Y');
+
         return $sii->setPeriod($month, $year);
     }
 }
