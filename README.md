@@ -83,7 +83,7 @@ En resumen, es una fiel representación de la web de SII
 
 ### Ejemplos de uso
 
-Obtener indicadores mensuales del periodo Enero 2018
+Obtener indicadores mensuales del periodo Enero 2021
 
 ```php
 $previScraper = new PreviScraper();
