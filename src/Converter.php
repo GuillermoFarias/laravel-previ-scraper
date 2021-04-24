@@ -70,47 +70,4 @@ class Converter
     {
         return number_format($int, $decimals, ',', '.');
     }
-
-    /**
-     * formatArrayFloatValuesToString.
-     *
-     * @param  array $indicators
-     * @return array
-     */
-    public function formatArrayFloatValuesToString(array $indicators): array
-    {
-        $indicatorsParsed = [];
-
-        foreach ($indicators as $indicator => $value) {
-            if (is_float($value)) {
-                $indicatorsParsed[$indicator] = $this->floatToString($value);
-                continue;
-            }
-            if (is_integer($value)) {
-                $indicatorsParsed[$indicator] = $this->intToString($value);
-                continue;
-            }
-        }
-
-        return $indicatorsParsed;
-    }
-
-    /**
-     * arrayStringValuesToFloat.
-     *
-     * @param  array $indicators
-     * @return array
-     */
-    public function arrayStringValuesToFloat(array $indicators): array
-    {
-        $indicatorsParsed = [];
-
-        foreach ($indicators as $indicator => $value) {
-            if (is_string($value)) {
-                $indicatorsParsed[$indicator] = $this->CLPtoFloat($value);
-            }
-        }
-
-        return $indicatorsParsed;
-    }
 }
