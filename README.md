@@ -6,28 +6,36 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/guillermofarias/laravel-previ-service/badge)](https://www.codefactor.io/repository/github/guillermofarias/laravel-previ-service)
 [![StyleCI](https://github.styleci.io/repos/361124148/shield?branch=master)](https://github.styleci.io/repos/361124148?branch=master)
 
-[![Latest Stable Version](https://poser.pugx.org/gfarias/previ-service/v)](//packagist.org/packages/gfarias/previ-service) 
-[![Total Downloads](https://poser.pugx.org/gfarias/previ-service/downloads)](//packagist.org/packages/gfarias/previ-service) 
-[![Latest Unstable Version](https://poser.pugx.org/gfarias/previ-service/v/unstable)](//packagist.org/packages/gfarias/previ-service) 
-[![License](https://poser.pugx.org/gfarias/previ-service/license)](//packagist.org/packages/gfarias/previ-service)
+[![Latest Stable Version](https://poser.pugx.org/gfarias/laravel-previ-service/v)](//packagist.org/packages/gfarias/laravel-previ-service) 
+[![Total Downloads](https://poser.pugx.org/gfarias/laravel-previ-service/downloads)](//packagist.org/packages/gfarias/laravel-previ-service) 
+[![Latest Unstable Version](https://poser.pugx.org/gfarias/laravel-previ-service/v/unstable)](//packagist.org/packages/gfarias/laravel-previ-service) 
+[![License](https://poser.pugx.org/gfarias/laravel-previ-service/license)](//packagist.org/packages/gfarias/laravel-previ-service)
 
-Paquete laravel para leer indicadores previsionales desde Previred y tramos de impuesto desde SII
+Indicadores previsionales desde Previred y tramos de impuesto desde SII
 
+Los datos se obtienen utilizando *[web scraping](https://es.wikipedia.org/wiki/Web_scraping#:~:text=Web%20scraping%20o%20raspado%20web,un%20navegador%20en%20una%20aplicaci%C3%B3n.)*
 
-## Installation
+## Fuentes
+[Previred](https://www.previred.com/web/previred/indicadores-previsionales)
 
-Run the following command from you terminal:
+[Sii](https://www.sii.cl/valores_y_fechas/impuesto_2da_categoria/impuesto2021.htm)
+
+## Instalación
+
+Corre el siguiente comando en la terminal:
 
 ```bash
 composer require gfarias/larsvel-previ-service
 ```
 
-or add this to require section in your composer.json file:
+o agrega el paquete en la sección *require* en tu archivo composer.json:
 
 ```bash
 "gfarias/laravel-previ-service": "~1.0"
 ```
 
-then run ```composer update```
+no te olvides de actualizar ```composer update```
 
-## Usage
+## Cómo se usa
+
+
