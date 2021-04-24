@@ -6,7 +6,7 @@ class Converter
 {
     /**
      * Convertir UF a Pesos Chilenos
-     * "34,6" => 34.6
+     * "34,6" => 34.6.
      *
      * @param string $monto
      * @return float
@@ -20,7 +20,7 @@ class Converter
 
     /**
      * Convertir CLP a número
-     * "234.568,34" => 234568.34
+     * "234.568,34" => 234568.34.
      *
      * @param string $monto
      * @return float
@@ -35,7 +35,7 @@ class Converter
 
     /**
      * Convertir CLP a número
-     * "234.568" => 234568
+     * "234.568" => 234568.
      *
      * @param string $monto
      * @return float
@@ -48,7 +48,7 @@ class Converter
     }
 
     /**
-     * floatToString
+     * floatToString.
      *
      * @param  float $float
      * @param  int $decimals
@@ -60,7 +60,7 @@ class Converter
     }
 
     /**
-     * intToString
+     * intToString.
      *
      * @param  float $float
      * @param  int $decimals
@@ -72,7 +72,7 @@ class Converter
     }
 
     /**
-     * formatArrayFloatValuesToString
+     * formatArrayFloatValuesToString.
      *
      * @param  array $indicators
      * @return array
@@ -96,7 +96,7 @@ class Converter
     }
 
     /**
-     * arrayStringValuesToFloat
+     * arrayStringValuesToFloat.
      *
      * @param  array $indicators
      * @return array

@@ -5,35 +5,35 @@ namespace Gfarias\PreviService\Sources;
 class Sii extends AbstractSource
 {
     /**
-     * url de Sii
+     * url de Sii.
      *
      * @var string
      */
     protected $url = 'https://www.sii.cl/valores_y_fechas/impuesto_2da_categoria/';
 
     /**
-     * define la fila de lectura para cada periodo en el dom
+     * define la fila de lectura para cada periodo en el dom.
      *
      * @var array
      */
     private $positions = ['mensual', 'quincenal', 'semanal', 'diario'];
 
     /**
-     * total de filas en cada tabla para leer
+     * total de filas en cada tabla para leer.
      *
      * @var int
      */
     private $totalRows = 0;
 
     /**
-     * tabla dom
+     * tabla dom.
      *
      * @var \Symfony\Component\DomCrawler\Crawler
      */
     private $table = null;
 
     /**
-     * establecer periodo mediante mes y año
+     * establecer periodo mediante mes y año.
      *
      * @param  string $month
      * @param  int $year
@@ -45,17 +45,18 @@ class Sii extends AbstractSource
         $this->dom = $this->client->request('GET', $url);
         $this->table = $this->dom->filter("#mes_$month table")->first();
 
-        if (!$this->table->first()->getNode(0)) {
-            throw new \Exception("No data for this period");
+        if (! $this->table->first()->getNode(0)) {
+            throw new \Exception('No data for this period');
         }
 
         $this->setRowPsitionsPeriods();
+
         return $this;
     }
 
     /**
      * setear la fila de lectura en html para cada periodo
-     * el dom html contiene todas las tablas del año-mes-periodo (quincenal, semana...)
+     * el dom html contiene todas las tablas del año-mes-periodo (quincenal, semana...).
      *
      * @return void
      */
@@ -73,7 +74,7 @@ class Sii extends AbstractSource
     }
 
     /**
-     * obtener todos los indicadores
+     * obtener todos los indicadores.
      *
      * @return array
      */
@@ -88,7 +89,7 @@ class Sii extends AbstractSource
     }
 
     /**
-     * getTramosMensuales
+     * getTramosMensuales.
      *
      * @return array
      */
@@ -96,11 +97,12 @@ class Sii extends AbstractSource
     {
         $inicio = $this->positions['mensual'];
         $fin = $this->positions['quincenal'];
+
         return $this->getIndicatorsFromTable('mensual', $inicio, $fin);
     }
 
     /**
-     * getTramosQuincenales
+     * getTramosQuincenales.
      *
      * @return array
      */
@@ -108,11 +110,12 @@ class Sii extends AbstractSource
     {
         $inicio = $this->positions['quincenal'];
         $fin = $this->positions['semanal'];
+
         return $this->getIndicatorsFromTable('quincenal', $inicio, $fin);
     }
 
     /**
-     * getTramosSemanales
+     * getTramosSemanales.
      *
      * @return array
      */
@@ -120,11 +123,12 @@ class Sii extends AbstractSource
     {
         $inicio = $this->positions['semanal'];
         $fin = $this->positions['diario'];
+
         return $this->getIndicatorsFromTable('semanal', $inicio, $fin);
     }
 
     /**
-     * getTramosDiarios
+     * getTramosDiarios.
      *
      * @return array
      */
@@ -132,11 +136,12 @@ class Sii extends AbstractSource
     {
         $inicio = $this->positions['diario'];
         $fin = $this->totalRows;
+
         return $this->getIndicatorsFromTable('diario', $inicio, $fin);
     }
 
     /**
-     * getIndicatorsFromTable
+     * getIndicatorsFromTable.
      *
      * @param  int $inicio
      * @param  int $fin
@@ -146,7 +151,7 @@ class Sii extends AbstractSource
     {
         $indicadores = [];
         for ($i = $inicio; $i < $fin; $i++) {
-            $tr = $this->table->filter("tr")->getNode($i);
+            $tr = $this->table->filter('tr')->getNode($i);
             $tds = explode("\n", $tr->textContent);
             $data = [
                 'periodo' => $periodo,

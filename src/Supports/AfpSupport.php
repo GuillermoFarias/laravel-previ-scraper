@@ -4,51 +4,52 @@ namespace Gfarias\PreviService\Supports;
 
 class AfpSupport
 {
-    public const CODE_DEFAULT = "00";
-    public const CODE_CUPRUM = "03";
-    public const CODE_HABITAT = "05";
-    public const CODE_PROVIDA = "08";
-    public const CODE_PLANVITAL = "29";
-    public const CODE_CAPITAL = "33";
-    public const CODE_MODELO = "34";
-    public const CODE_UNO = "35";
+    public const CODE_DEFAULT = '00';
+    public const CODE_CUPRUM = '03';
+    public const CODE_HABITAT = '05';
+    public const CODE_PROVIDA = '08';
+    public const CODE_PLANVITAL = '29';
+    public const CODE_CAPITAL = '33';
+    public const CODE_MODELO = '34';
+    public const CODE_UNO = '35';
 
     /**
-     * nombre
+     * nombre.
      *
      * @var string
      */
     private $nombre;
 
     /**
-     * codigo
+     * codigo.
      *
      * @var string
      */
     private $codigo;
 
     /**
-     * porcentajeDependiente
+     * porcentajeDependiente.
      *
      * @var float
      */
     private $porcentajeDependiente;
 
     /**
-     * porcentajeDependienteSis
+     * porcentajeDependienteSis.
      *
      * @var float
      */
     private $porcentajeDependienteSis;
 
     /**
-     * porcentajeIndependiente
+     * porcentajeIndependiente.
      *
      * @var float
      */
     private $porcentajeIndependiente;
+
     /**
-     * __construct
+     * __construct.
      *
      * @param string $nombre
      * @param string $codigo
@@ -72,7 +73,7 @@ class AfpSupport
     }
 
     /**
-     * nombre Afp
+     * nombre Afp.
      *
      * @return string
      */
@@ -82,7 +83,7 @@ class AfpSupport
     }
 
     /**
-     * codigo afp
+     * codigo afp.
      *
      * @return string
      */
@@ -92,7 +93,7 @@ class AfpSupport
     }
 
     /**
-     * obtener porcentaje dependiente desde indicador AFP
+     * obtener porcentaje dependiente desde indicador AFP.
      *
      * @return float
      */
@@ -102,7 +103,7 @@ class AfpSupport
     }
 
     /**
-     * obtener porcentaje SIS desde indicador AFP
+     * obtener porcentaje SIS desde indicador AFP.
      *
      * @return float
      */
@@ -112,7 +113,7 @@ class AfpSupport
     }
 
     /**
-     * obtener porcentaje independiente desde indicador AFP
+     * obtener porcentaje independiente desde indicador AFP.
      *
      * @return float
      */
@@ -122,7 +123,7 @@ class AfpSupport
     }
 
     /**
-     * toArray
+     * toArray.
      *
      * @return array
      */

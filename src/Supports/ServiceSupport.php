@@ -29,6 +29,6 @@ abstract class ServiceSupport
         9 => self::MES_SEPTIEMBRE,
         10 => self::MES_OCTUBRE,
         11 => self::MES_NOVIEMBRE,
-        12 => self::MES_DICIEMBRE
+        12 => self::MES_DICIEMBRE,
     ];
 }

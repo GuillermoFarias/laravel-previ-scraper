@@ -26,7 +26,7 @@ class AbstractSource
     }
 
     /**
-     * extraer clp con puntuación desde texto
+     * extraer clp con puntuación desde texto.
      */
     public function getCLPFromText(string $text): string
     {
@@ -36,20 +36,21 @@ class AbstractSource
             return (string) $result[0];
         }
 
-        return "0";
+        return '0';
     }
 
     /**
-     * extraer montos clp con puntuación desde texto
+     * extraer montos clp con puntuación desde texto.
      */
     public function getAllCLPFromText(string $text): array
     {
         preg_match_all('/([0-9.0-9]{2,30}(,[0-9]{1,3})?)/', $text, $result);
+
         return $result[0];
     }
 
     /**
-     * extraer Uf con puntuación desde texto
+     * extraer Uf con puntuación desde texto.
      */
     public function getUFFromText(string $text): string
     {
@@ -59,6 +60,6 @@ class AbstractSource
             return (string) $result[0];
         }
 
-        return "0";
+        return '0';
     }
 }
