@@ -8,28 +8,28 @@ use Goutte\Client;
 class AbstractSource
 {
     /**
-     * converter
+     * converter.
      *
      * @var \Gfarias\PreviScraper\Converter
      */
     public $converter = null;
 
     /**
-     * client
+     * client.
      *
      * @var \Goutte\Client
      */
     public $client = null;
 
     /**
-     * dom
+     * dom.
      *
      * @var \Symfony\Component\DomCrawler\Crawler
      */
     public $dom = null;
 
     /**
-     * url
+     * url.
      *
      * @var string
      */

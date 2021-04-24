@@ -5,42 +5,42 @@ namespace Gfarias\PreviScraper;
 class CesantiaSupport
 {
     /**
-     * indefinidoEmpleador
+     * indefinidoEmpleador.
      *
      * @var float
      */
     private $indefinidoEmpleador = 0.0;
 
     /**
-     * indefinidoTrabajador
+     * indefinidoTrabajador.
      *
      * @var float
      */
     private $indefinidoTrabajador = 0.0;
 
     /**
-     * plazoFijoEmpleador
+     * plazoFijoEmpleador.
      *
      * @var float
      */
     private $plazoFijoEmpleador = 0.0;
 
     /**
-     * indefinidoSobre11Empleador
+     * indefinidoSobre11Empleador.
      *
      * @var float
      */
     private $indefinidoSobre11Empleador = 0.0;
 
     /**
-     * casaParticularEmpleador
+     * casaParticularEmpleador.
      *
      * @var float
      */
     private $casaParticularEmpleador = 0.0;
 
     /**
-     * __construct
+     * __construct.
      * @param  float $indefinidoEmpleador
      * @param  float $indefinidoTrabajador
      * @param  float $plazoFijoEmpleador
@@ -63,7 +63,7 @@ class CesantiaSupport
     }
 
     /**
-     * Get indefinidoEmpleador
+     * Get indefinidoEmpleador.
      *
      * @return  float
      */
@@ -73,7 +73,7 @@ class CesantiaSupport
     }
 
     /**
-     * Get indefinidoTrabajador
+     * Get indefinidoTrabajador.
      *
      * @return  float
      */
@@ -83,7 +83,7 @@ class CesantiaSupport
     }
 
     /**
-     * Get plazoFijoEmpleador
+     * Get plazoFijoEmpleador.
      *
      * @return  float
      */
@@ -93,7 +93,7 @@ class CesantiaSupport
     }
 
     /**
-     * Get indefinidoSobre11Empleador
+     * Get indefinidoSobre11Empleador.
      *
      * @return  float
      */
@@ -103,7 +103,7 @@ class CesantiaSupport
     }
 
     /**
-     * Get casaParticularEmpleador
+     * Get casaParticularEmpleador.
      *
      * @return  float
      */
@@ -113,7 +113,7 @@ class CesantiaSupport
     }
 
     /**
-     * toArray
+     * toArray.
      *
      * @return array
      */
@@ -124,7 +124,7 @@ class CesantiaSupport
             'indefinidoTrabajador' => $this->indefinidoTrabajador,
             'plazoFijoEmpleador' => $this->plazoFijoEmpleador,
             'indefinidoSobre11Empleador' => $this->indefinidoSobre11Empleador,
-            'casaParticularEmpleador' => $this->casaParticularEmpleador
+            'casaParticularEmpleador' => $this->casaParticularEmpleador,
         ];
     }
 }
