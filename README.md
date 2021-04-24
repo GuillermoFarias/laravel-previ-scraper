@@ -214,7 +214,7 @@ Array
 | `all()`                                 |  array  |
 
 
-### `CesantiaSupport` Datos especificos del seguro de cesantía
+### `CesantiaSupport` Datos específicos del seguro de cesantía
 
 | método                            | retorno |
 |-----------------------------------|:-------:|
@@ -225,7 +225,7 @@ Array
 | `getCasaParticularEmpleador()`    |  float  |
 | `toArray()`                       |  array  |
 
-### `AfpSupport` Datos especificos de cada AFP
+### `AfpSupport` Datos específicos de cada AFP
 
 | método                            | retorno |
 |-----------------------------------|:-------:|
@@ -236,7 +236,7 @@ Array
 | `getPorcentajeIndependiente()`    |  float  |
 | `toArray()`                       |  array  |
 
-### Emeplo de uso
+### Ejemplo de uso
 
 ```php
 $previScraper = new PreviScraper();
