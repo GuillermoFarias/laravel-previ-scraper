@@ -240,7 +240,8 @@ Array
 
 ```php
 $previScraper = new PreviScraper();
-$rentaTopeImponible = $previScraper->previred()->getRentaTopeImponibleCesantia();
-$porcentajeSisAfpHabitat = $previScraper->getAfpHabitat()->getPorcentajeSis();
-$aporteCesantiaEmpleadorPlazoFijo = $previScraper->getSeguroCesantia()->getPlazoFijoEmpleador();
+$previred = $previScraper->previred();
+$rentaTopeImponible = $previred->getRentaTopeImponibleCesantia();
+$porcentajeSisAfpHabitat = $previred->getAfpHabitat()->getPorcentajeSis();
+$aporteCesantiaEmpleadorPlazoFijo = $previred->getSeguroCesantia()->getPlazoFijoEmpleador();
 ```
