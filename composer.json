@@ -1,5 +1,5 @@
 {
-    "name": "gfarias/previ-service",
+    "name": "gfarias/laravel-previ-service",
     "description": "Extractor de indicadores previsionales y tramos de renta (previred/sii)",
     "authors": [
         {
