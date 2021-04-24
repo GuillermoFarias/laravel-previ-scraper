@@ -18,13 +18,13 @@ Indicadores previsionales desde Previred y tramos de impuesto desde SII
 Corre el siguiente comando en la terminal:
 
 ```bash
-composer require gfarias/laravel-previ-service
+composer require gfarias/laravel-previ-scraper
 ```
 
 o agrega el paquete en la sección *require* en tu archivo composer.json:
 
 ```bash
-"gfarias/laravel-previ-service": "~1.0"
+"gfarias/laravel-previ-scraper": "~1.0"
 ```
 
 no te olvides de actualizar ```composer update```
