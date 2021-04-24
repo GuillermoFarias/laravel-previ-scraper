@@ -43,6 +43,8 @@ class AbstractSource
 
     /**
      * extraer clp con puntuación desde texto.
+     *
+     * @return string
      */
     public function getCLPFromText(string $text): string
     {
@@ -57,6 +59,8 @@ class AbstractSource
 
     /**
      * extraer montos clp con puntuación desde texto.
+     *
+     * @return array
      */
     public function getAllCLPFromText(string $text): array
     {
@@ -67,6 +71,8 @@ class AbstractSource
 
     /**
      * extraer Uf con puntuación desde texto.
+     *
+     * @return string
      */
     public function getUFFromText(string $text): string
     {
