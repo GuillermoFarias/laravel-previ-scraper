@@ -45,7 +45,7 @@ class Sii extends AbstractSource
         $this->dom = $this->client->request('GET', $url);
         $this->table = $this->dom->filter("#mes_$month table")->first();
 
-        if (! $this->table->first()->getNode(0)) {
+        if (!$this->table->first()->getNode(0)) {
             throw new \Exception('No data for this period');
         }
 
@@ -153,13 +153,14 @@ class Sii extends AbstractSource
         for ($i = $inicio; $i < $fin; $i++) {
             $tr = $this->table->filter('tr')->getNode($i);
             $tds = explode("\n", $tr->textContent);
+
             $data = [
                 'periodo' => $periodo,
-                'desde' => $this->converter->CLPtoFloat($this->getCLPFromText($tds[1])),
-                'hasta' => $this->converter->CLPtoFloat($this->getCLPFromText($tds[2])),
-                'factor' => $this->converter->UFtoFloat($this->getUFFromText($tds[3])),
-                'descuento' => $this->converter->CLPtoFloat($this->getCLPFromText($tds[4])),
-                'impuesto' => $this->converter->UFtoFloat($this->getUFFromText($tds[5])),
+                'desde' => $this->converter->CLPtoFloat($this->getCLPFromText($tds[2])),
+                'hasta' => $this->converter->CLPtoFloat($this->getCLPFromText($tds[3])),
+                'factor' => $this->converter->UFtoFloat($this->getUFFromText($tds[4])),
+                'descuento' => $this->converter->CLPtoFloat($this->getCLPFromText($tds[5])),
+                'impuesto' => $this->converter->UFtoFloat($this->getUFFromText($tds[6])),
             ];
             array_push($indicadores, $data);
         }
