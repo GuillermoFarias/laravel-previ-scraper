@@ -45,7 +45,7 @@ class Sii extends AbstractSource
         $this->dom = $this->client->request('GET', $url);
         $this->table = $this->dom->filter("#mes_$month table")->first();
 
-        if (!$this->table->first()->getNode(0)) {
+        if (! $this->table->first()->getNode(0)) {
             throw new \Exception('No data for this period');
         }
 
