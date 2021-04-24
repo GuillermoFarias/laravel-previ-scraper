@@ -8,23 +8,23 @@ class Previred extends AbstractSource
 {
     protected $url = 'https://www.previred.com/web/previred/indicadores-previsionales';
 
-    private $uf = "";
-    private $utm = "";
+    private $uf = '';
+    private $utm = '';
 
     // Rentas
-    private $rentaTopeImponibleAfp = "";
-    private $rentaTopeImponibleIps = "";
-    private $rentaTopeImponibleCesantia = "";
-    private $rentaMinimaImponibleDependiente = "";
-    private $rentaMinimaImponibleMenores = "";
-    private $rentaMinimaImponibleParticulares = "";
+    private $rentaTopeImponibleAfp = '';
+    private $rentaTopeImponibleIps = '';
+    private $rentaTopeImponibleCesantia = '';
+    private $rentaMinimaImponibleDependiente = '';
+    private $rentaMinimaImponibleMenores = '';
+    private $rentaMinimaImponibleParticulares = '';
 
     // Cesantia
     private $seguroCesantia = [];
 
     // APV
-    private $topeApvMensual = "";
-    private $topeApvAnual = "";
+    private $topeApvMensual = '';
+    private $topeApvAnual = '';
 
     // AFP
     private $afpCapital = null;
@@ -36,16 +36,16 @@ class Previred extends AbstractSource
     private $afpUno = null;
 
     // asignación familiar
-    private $asignacionTramoAMonto = "";
-    private $asignacionTramoBMonto = "";
-    private $asignacionTramoCMonto = "";
-    private $asignacionTramoA = "";
-    private $asignacionTramoB = "";
-    private $asignacionTramoC = "";
-    private $asignacionTramoD = "";
+    private $asignacionTramoAMonto = '';
+    private $asignacionTramoBMonto = '';
+    private $asignacionTramoCMonto = '';
+    private $asignacionTramoA = '';
+    private $asignacionTramoB = '';
+    private $asignacionTramoC = '';
+    private $asignacionTramoD = '';
 
     /**
-     * setear indicadores
+     * setear indicadores.
      *
      * @return \Gfarias\PreviService\Sources\Previred
      */
@@ -77,11 +77,12 @@ class Previred extends AbstractSource
         $this->setAsignacionTramoB();
         $this->setAsignacionTramoC();
         $this->setAsignacionTramoD();
+
         return $this;
     }
 
     /**
-     * get UF as string
+     * get UF as string.
      *
      * @return float
      */
@@ -91,7 +92,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Set the value of UF
+     * Set the value of UF.
      */
     public function setUF(): void
     {
@@ -101,7 +102,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * get Utm as string
+     * get Utm as string.
      *
      * @return float
      */
@@ -111,7 +112,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Set the value of UTM
+     * Set the value of UTM.
      */
     public function setUTM(): void
     {
@@ -121,7 +122,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * get rentaTopeImponibleAfp as float
+     * get rentaTopeImponibleAfp as float.
      *
      * @return string
      */
@@ -131,7 +132,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Set the value of rentaTopeImponibleAfp
+     * Set the value of rentaTopeImponibleAfp.
      *
      * @return void
      */
@@ -143,7 +144,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * get getRentaTopeImponibleIps as float
+     * get getRentaTopeImponibleIps as float.
      *
      * @return string
      */
@@ -153,7 +154,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Set the value of rentaTopeImponibleIps
+     * Set the value of rentaTopeImponibleIps.
      *
      * @return void
      */
@@ -165,7 +166,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * get getRentaTopeImponibleCesantia as float
+     * get getRentaTopeImponibleCesantia as float.
      *
      * @return float
      */
@@ -175,7 +176,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * set indicator
+     * set indicator.
      *
      * @return void
      */
@@ -186,9 +187,8 @@ class Previred extends AbstractSource
         $this->rentaTopeImponibleCesantia = $this->getUFFromText($valor);
     }
 
-
     /**
-     * Get the value of rentaMinimaImponibleDependiente
+     * Get the value of rentaMinimaImponibleDependiente.
      *
      * @return float
      */
@@ -198,7 +198,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Set the value of rentaMinimaImponibleDependiente
+     * Set the value of rentaMinimaImponibleDependiente.
      *
      * @return void
      */
@@ -210,7 +210,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Get the value of rentaMinimaImponibleMenores
+     * Get the value of rentaMinimaImponibleMenores.
      *
      * @return float
      */
@@ -220,7 +220,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Set the value of rentaMinimaImponibleMenores
+     * Set the value of rentaMinimaImponibleMenores.
      *
      * @return void
      */
@@ -232,7 +232,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * getRentaMinimaImponibleParticulares
+     * getRentaMinimaImponibleParticulares.
      *
      * @return float
      */
@@ -242,7 +242,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Set the value of rentaMinimaImponibleParticulares
+     * Set the value of rentaMinimaImponibleParticulares.
      *
      * @return void
      */
@@ -254,7 +254,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Set the value of cesantia
+     * Set the value of cesantia.
      *
      * @return void
      */
@@ -282,7 +282,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * get SeguroCesantia
+     * get SeguroCesantia.
      *
      * @return array
      */
@@ -292,7 +292,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * get TopeApvMensual
+     * get TopeApvMensual.
      *
      * @return float
      */
@@ -302,7 +302,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Set the value of topeAPVMensual
+     * Set the value of topeAPVMensual.
      *
      * @return void
      */
@@ -314,7 +314,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Get the value of topeApvAnual
+     * Get the value of topeApvAnual.
      *
      * @return float
      */
@@ -324,7 +324,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Set the value of topeApvAnual
+     * Set the value of topeApvAnual.
      *
      * @return void
      */
@@ -336,7 +336,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Get the value of afpCapital
+     * Get the value of afpCapital.
      *
      * @return \Gfarias\PreviService\Supports\AfpSupport
      */
@@ -346,7 +346,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Set the value of afpCapital
+     * Set the value of afpCapital.
      *
      * @return  self
      */
@@ -356,7 +356,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Get the value of afpCuprum
+     * Get the value of afpCuprum.
      *
      * @return \Gfarias\PreviService\Supports\AfpSupport
      */
@@ -366,7 +366,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Set the value of afpCuprum
+     * Set the value of afpCuprum.
      *
      * @return void
      */
@@ -376,7 +376,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Get the value of afpHabitat
+     * Get the value of afpHabitat.
      *
      * @return \Gfarias\PreviService\Supports\AfpSupport
      */
@@ -386,7 +386,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Set the value of afpHabitat
+     * Set the value of afpHabitat.
      *
      * @return void
      */
@@ -396,7 +396,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Get the value of afpPlanVital
+     * Get the value of afpPlanVital.
      *
      * @return \Gfarias\PreviService\Supports\AfpSupport
      */
@@ -406,7 +406,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Set the value of afpPlanVital
+     * Set the value of afpPlanVital.
      *
      * @return void
      */
@@ -416,7 +416,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Get the value of afpProVida
+     * Get the value of afpProVida.
      *
      * @return \Gfarias\PreviService\Supports\AfpSupport
      */
@@ -426,7 +426,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Set the value of afpProVida
+     * Set the value of afpProVida.
      *
      * @return void
      */
@@ -436,7 +436,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Get the value of afpModelo
+     * Get the value of afpModelo.
      *
      * @return \Gfarias\PreviService\Supports\AfpSupport
      */
@@ -446,7 +446,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Set the value of afpModelo
+     * Set the value of afpModelo.
      *
      * @return void
      */
@@ -456,7 +456,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Get the value of afpUno
+     * Get the value of afpUno.
      *
      * @return \Gfarias\PreviService\Supports\AfpSupport
      */
@@ -466,7 +466,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Set the value of afpUno
+     * Set the value of afpUno.
      *
      * @return void
      */
@@ -476,7 +476,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Get the value of asignacionTramoAMonto
+     * Get the value of asignacionTramoAMonto.
      */
     public function getAsignacionTramoAMonto(): float
     {
@@ -484,7 +484,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Set the value of asignacionTramoAMonto
+     * Set the value of asignacionTramoAMonto.
      *
      * @return void
      */
@@ -496,7 +496,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Get the value of asignacionTramoBMonto
+     * Get the value of asignacionTramoBMonto.
      */
     public function getAsignacionTramoBMonto(): float
     {
@@ -504,7 +504,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Set the value of asignacionTramoBMonto
+     * Set the value of asignacionTramoBMonto.
      *
      * @return void
      */
@@ -516,7 +516,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Get the value of asignacionTramoCMonto
+     * Get the value of asignacionTramoCMonto.
      */
     public function getAsignacionTramoCMonto(): float
     {
@@ -524,7 +524,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Set the value of asignacionTramoCMonto
+     * Set the value of asignacionTramoCMonto.
      *
      * @return void
      */
@@ -536,7 +536,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Get the value of asignacionTramoA
+     * Get the value of asignacionTramoA.
      */
     public function getAsignacionTramoA(): float
     {
@@ -544,7 +544,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Set the value of asignacionTramoA
+     * Set the value of asignacionTramoA.
      *
      * @return void
      */
@@ -556,7 +556,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Get the value of asignacionTramoB
+     * Get the value of asignacionTramoB.
      *
      * @return string
      */
@@ -566,7 +566,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Set the value of asignacionTramoB
+     * Set the value of asignacionTramoB.
      *
      * @return  self
      */
@@ -578,7 +578,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Get the value of asignacionTramoC
+     * Get the value of asignacionTramoC.
      *
      * @return float
      */
@@ -588,7 +588,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Set the value of asignacionTramoC
+     * Set the value of asignacionTramoC.
      *
      * @return void
      */
@@ -600,7 +600,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Get the value of asignacionTramoD
+     * Get the value of asignacionTramoD.
      *
      * @return float
      */
@@ -610,7 +610,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * Set the value of asignacionTramoD
+     * Set the value of asignacionTramoD.
      *
      * @return void
      */
@@ -622,7 +622,7 @@ class Previred extends AbstractSource
     }
 
     /**
-     * generar afp support
+     * generar afp support.
      *
      * @param string $codigo
      * @param int $trIndex
@@ -636,11 +636,12 @@ class Previred extends AbstractSource
         $dependiente = $this->converter->UFtoFloat($this->getUFFromText($tr->filter('td')->getNode(1)->textContent));
         $dependienteSis = $this->converter->UFtoFloat($this->getUFFromText($tr->filter('td')->getNode(2)->textContent));
         $independiente = $this->converter->UFtoFloat($this->getUFFromText($tr->filter('td')->getNode(3)->textContent));
+
         return new AfpSupport($nombreAfp, $codigo, $dependiente, $dependienteSis, $independiente);
     }
 
     /**
-     * get all indicators
+     * get all indicators.
      *
      * @return array
      */
