@@ -8,63 +8,63 @@ use Gfarias\PreviScraper\CesantiaSupport;
 class Previred extends AbstractSource
 {
     /**
-     * url
+     * url.
      *
      * @var string
      */
     protected $url = 'https://www.previred.com/web/previred/indicadores-previsionales';
 
     /**
-     * uf
+     * uf.
      *
      * @var string
      */
     private $uf = '';
 
     /**
-     * utm
+     * utm.
      *
      * @var string
      */
     private $utm = '';
 
     /**
-     * rentaTopeImponibleAfp
+     * rentaTopeImponibleAfp.
      *
      * @var float
      */
     private $rentaTopeImponibleAfp = 0.0;
 
     /**
-     * rentaTopeImponibleIps
+     * rentaTopeImponibleIps.
      *
      * @var float
      */
     private $rentaTopeImponibleIps = 0.0;
 
     /**
-     * rentaTopeImponibleCesantia
+     * rentaTopeImponibleCesantia.
      *
      * @var float
      */
     private $rentaTopeImponibleCesantia = 0.0;
 
     /**
-     * rentaMinimaImponibleDependiente
+     * rentaMinimaImponibleDependiente.
      *
      * @var float
      */
     private $rentaMinimaImponibleDependiente = 0.0;
 
     /**
-     * rentaMinimaImponibleMenores
+     * rentaMinimaImponibleMenores.
      *
      * @var float
      */
     private $rentaMinimaImponibleMenores = 0.0;
 
     /**
-     * rentaMinimaImponibleParticulares
+     * rentaMinimaImponibleParticulares.
      *
      * @var float
      */
