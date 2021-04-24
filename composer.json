@@ -1,0 +1,44 @@
+{
+    "name": "gfarias/previ-service",
+    "description": "Extractor de indicadores previsionales y tramos de renta (previred/sii)",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Guillermo Farías",
+            "email": "guillermodanilo08@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "weidner/goutte": "^2.1",
+        "illuminate/support": "^7.0|^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gfarias\\PreviService\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Gfarias\\PrevicService\\Tests\\": "tests"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Gfarias\\PreviService\\PreviServiceProvider"
+            ]
+        }
+    }
+}
