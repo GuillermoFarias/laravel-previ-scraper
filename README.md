@@ -1,4 +1,4 @@
-# Laravel PreviService 
+# Laravel PreviScraper 
 ## Indicadores previsionales Chile 🇨🇱
 
 [![tests](https://github.com/GuillermoFarias/laravel-previ-scraper/actions/workflows/tests.yml/badge.svg?branch=master)](https://github.com/GuillermoFarias/laravel-previ-scraper/actions/workflows/tests.yml)
@@ -37,8 +37,8 @@ Puedes utilizar el provider e inyectarlo directo en los métodos ejecutados por 
 
 ```php
 
-public function handle(PreviServiceProvider $previServiceProvider): void {
-    $sii = $previServiceProvider->sii();
+public function handle(PreviScraperProvider $PreviScraperProvider): void {
+    $sii = $PreviScraperProvider->sii();
     print_r($sii->all());
 }
 ```

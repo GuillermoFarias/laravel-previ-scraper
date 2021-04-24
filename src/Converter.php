@@ -1,6 +1,6 @@
 <?php
 
-namespace Gfarias\PreviService\Supports;
+namespace Gfarias\PreviScraper;
 
 class Converter
 {

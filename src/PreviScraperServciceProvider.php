@@ -1,10 +1,10 @@
 <?php
 
-namespace Gfarias\PreviService;
+namespace Gfarias\PreviScraper;
 
 use Illuminate\Support\ServiceProvider as Provider;
 
-class PreviServiceProvider extends Provider
+class PreviScraperServciceProvider extends Provider
 {
     /**
      * Register the application services.
@@ -13,8 +13,8 @@ class PreviServiceProvider extends Provider
      */
     public function register(): void
     {
-        $this->app->bind(PreviService::class, function () {
-            return new PreviService();
+        $this->app->bind(PreviScraper::class, function () {
+            return new PreviScraper();
         });
     }
 }

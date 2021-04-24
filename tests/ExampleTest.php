@@ -1,6 +1,6 @@
 <?php
 
-namespace Gdanilo\PreviService\Tests;
+namespace Gdanilo\PreviScraper\Tests;
 
 use PHPUnit\Framework\TestCase;
 

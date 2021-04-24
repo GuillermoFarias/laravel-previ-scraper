@@ -1,6 +1,17 @@
 {
     "name": "gfarias/laravel-previ-scraper",
     "description": "Extractor de indicadores previsionales y tramos de renta (previred/sii)",
+    "keywords": [
+        "laravel",
+        "previred",
+        "sii",
+        "indidcadores",
+        "previsionales",
+        "chile"
+    ],
+    "homepage": "https://github.com/gfarias/laravel-previ-scraper",
+    "license": "MIT",
+    "type": "library",
     "authors": [
         {
             "name": "Guillermo Farías",
@@ -17,27 +28,27 @@
     },
     "autoload": {
         "psr-4": {
-            "Gfarias\\PreviService\\": "src"
+            "Gfarias\\PreviScraper\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Gfarias\\PrevicService\\Tests\\": "tests"
+            "Gfarias\\PrevicScraper\\Tests\\": "tests"
         }
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "scripts": {
-        "test": "vendor/bin/phpunit"
-    },
     "config": {
         "sort-packages": true
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Gfarias\\PreviService\\PreviServiceProvider"
+                "Gfarias\\PreviScraper\\PreviScraperServciceProvider"
             ]
         }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
     }
 }

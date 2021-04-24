@@ -1,22 +1,38 @@
 <?php
 
-namespace Gfarias\PreviService\Sources;
+namespace Gfarias\PreviScraper\Sources;
 
-use Gfarias\PreviService\Supports\Converter;
+use Gfarias\PreviScraper\Converter;
 use Goutte\Client;
 
 class AbstractSource
 {
-    /** @var \Gfarias\PreviService\Supports\Converter */
+    /**
+     * converter
+     *
+     * @var \Gfarias\PreviScraper\Converter
+     */
     public $converter = null;
 
-    /** @var \Goutte\Client */
+    /**
+     * client
+     *
+     * @var \Goutte\Client
+     */
     public $client = null;
 
-    /** @var \Symfony\Component\DomCrawler\Crawler */
+    /**
+     * dom
+     *
+     * @var \Symfony\Component\DomCrawler\Crawler
+     */
     public $dom = null;
 
-    /** @var string */
+    /**
+     * url
+     *
+     * @var string
+     */
     protected $url = '';
 
     public function __construct()

@@ -1,6 +1,6 @@
 <?php
 
-namespace Gfarias\PreviService\Sources;
+namespace Gfarias\PreviScraper\Sources;
 
 class Sii extends AbstractSource
 {
@@ -37,7 +37,7 @@ class Sii extends AbstractSource
      *
      * @param  string $month
      * @param  int $year
-     * @return \Gfarias\PreviService\Sources\Sii
+     * @return \Gfarias\PreviScraper\Sources\Sii
      */
     public function setPeriod(string $month, int $year): Sii
     {

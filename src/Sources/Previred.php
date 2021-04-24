@@ -1,23 +1,74 @@
 <?php
 
-namespace Gfarias\PreviService\Sources;
+namespace Gfarias\PreviScraper\Sources;
 
-use Gfarias\PreviService\Supports\AfpSupport;
+use Gfarias\PreviScraper\AfpSupport;
+use Gfarias\PreviScraper\CesantiaSupport;
 
 class Previred extends AbstractSource
 {
+    /**
+     * url
+     *
+     * @var string
+     */
     protected $url = 'https://www.previred.com/web/previred/indicadores-previsionales';
 
+    /**
+     * uf
+     *
+     * @var string
+     */
     private $uf = '';
+
+    /**
+     * utm
+     *
+     * @var string
+     */
     private $utm = '';
 
-    // Rentas
-    private $rentaTopeImponibleAfp = '';
-    private $rentaTopeImponibleIps = '';
-    private $rentaTopeImponibleCesantia = '';
-    private $rentaMinimaImponibleDependiente = '';
-    private $rentaMinimaImponibleMenores = '';
-    private $rentaMinimaImponibleParticulares = '';
+    /**
+     * rentaTopeImponibleAfp
+     *
+     * @var float
+     */
+    private $rentaTopeImponibleAfp = 0.0;
+
+    /**
+     * rentaTopeImponibleIps
+     *
+     * @var float
+     */
+    private $rentaTopeImponibleIps = 0.0;
+
+    /**
+     * rentaTopeImponibleCesantia
+     *
+     * @var float
+     */
+    private $rentaTopeImponibleCesantia = 0.0;
+
+    /**
+     * rentaMinimaImponibleDependiente
+     *
+     * @var float
+     */
+    private $rentaMinimaImponibleDependiente = 0.0;
+
+    /**
+     * rentaMinimaImponibleMenores
+     *
+     * @var float
+     */
+    private $rentaMinimaImponibleMenores = 0.0;
+
+    /**
+     * rentaMinimaImponibleParticulares
+     *
+     * @var float
+     */
+    private $rentaMinimaImponibleParticulares = 0.0;
 
     // Cesantia
     private $seguroCesantia = [];
@@ -47,7 +98,7 @@ class Previred extends AbstractSource
     /**
      * setear indicadores.
      *
-     * @return \Gfarias\PreviService\Sources\Previred
+     * @return \Gfarias\PreviScraper\Sources\Previred
      */
     public function setIndicators(): Previred
     {
@@ -93,8 +144,10 @@ class Previred extends AbstractSource
 
     /**
      * Set the value of UF.
+     *
+     * @return void
      */
-    public function setUF(): void
+    private function setUF(): void
     {
         $tabla = $this->dom->filter('table')->eq(0);
         $valor = $tabla->filter('td')->getNode(2)->textContent;
@@ -114,7 +167,7 @@ class Previred extends AbstractSource
     /**
      * Set the value of UTM.
      */
-    public function setUTM(): void
+    private function setUTM(): void
     {
         $tabla = $this->dom->filter('table')->eq(1);
         $valor = $tabla->filter('td')->getNode(4)->textContent;
@@ -136,7 +189,7 @@ class Previred extends AbstractSource
      *
      * @return void
      */
-    public function setRentaTopeImponibleAfp(): void
+    private function setRentaTopeImponibleAfp(): void
     {
         $tabla = $this->dom->filter('table')->eq(2);
         $valor = $tabla->filter('td')->getNode(1)->textContent;
@@ -158,7 +211,7 @@ class Previred extends AbstractSource
      *
      * @return void
      */
-    public function setRentaTopeImponibleIps(): void
+    private function setRentaTopeImponibleIps(): void
     {
         $tabla = $this->dom->filter('table')->eq(2);
         $valor = $tabla->filter('td')->getNode(3)->textContent;
@@ -180,7 +233,7 @@ class Previred extends AbstractSource
      *
      * @return void
      */
-    public function setRentaTopeImponibleCesantia(): void
+    private function setRentaTopeImponibleCesantia(): void
     {
         $tabla = $this->dom->filter('table')->eq(2);
         $valor = $tabla->filter('td')->getNode(5)->textContent;
@@ -202,7 +255,7 @@ class Previred extends AbstractSource
      *
      * @return void
      */
-    public function setRentaMinimaImponibleDependiente(): void
+    private function setRentaMinimaImponibleDependiente(): void
     {
         $tabla = $this->dom->filter('table')->eq(3);
         $valor = $tabla->filter('td')->getNode(2)->textContent;
@@ -224,7 +277,7 @@ class Previred extends AbstractSource
      *
      * @return void
      */
-    public function setRentaMinimaImponibleMenores(): void
+    private function setRentaMinimaImponibleMenores(): void
     {
         $tabla = $this->dom->filter('table')->eq(3);
         $valor = $tabla->filter('td')->getNode(4)->textContent;
@@ -246,7 +299,7 @@ class Previred extends AbstractSource
      *
      * @return void
      */
-    public function setRentaMinimaImponibleParticulares(): void
+    private function setRentaMinimaImponibleParticulares(): void
     {
         $tabla = $this->dom->filter('table')->eq(3);
         $valor = $tabla->filter('td')->getNode(6)->textContent;
@@ -258,35 +311,45 @@ class Previred extends AbstractSource
      *
      * @return void
      */
-    public function setSeguroCesantia(): void
+    private function setSeguroCesantia(): void
     {
         $tabla = $this->dom->filter('table')->eq(6);
-        $indicadores = [
-            'indefinido_empleador' => $this->converter->UFtoFloat(
-                $this->getUFFromText($tabla->filter('td')->getNode(6)->textContent)
-            ),
-            'indefinido_trabajador' => $this->converter->UFtoFloat(
-                $this->getUFFromText($tabla->filter('td')->getNode(7)->textContent)
-            ),
-            'plazo_fijo_empleador' => $this->converter->UFtoFloat(
-                $this->getUFFromText($tabla->filter('td')->getNode(9)->textContent)
-            ),
-            'indefinido_sobre_11_empleador' => $this->converter->UFtoFloat(
-                $this->getUFFromText($tabla->filter('td')->getNode(12)->textContent)
-            ),
-            'casa_particular_empleador' => $this->converter->UFtoFloat(
-                $this->getUFFromText($tabla->filter('td')->getNode(15)->textContent)
-            ),
-        ];
-        $this->seguroCesantia = $indicadores;
+
+        $indefinidoEmpleador = $this->converter->UFtoFloat(
+            $this->getUFFromText($tabla->filter('td')->getNode(6)->textContent)
+        );
+
+        $indefinidoTrabajador = $this->converter->UFtoFloat(
+            $this->getUFFromText($tabla->filter('td')->getNode(7)->textContent)
+        );
+
+        $plazoFijoEmpleador = $this->converter->UFtoFloat(
+            $this->getUFFromText($tabla->filter('td')->getNode(9)->textContent)
+        );
+
+        $indefinidoSobre11Empleador = $this->converter->UFtoFloat(
+            $this->getUFFromText($tabla->filter('td')->getNode(12)->textContent)
+        );
+
+        $casaParticularEmpleador = $this->converter->UFtoFloat(
+            $this->getUFFromText($tabla->filter('td')->getNode(15)->textContent)
+        );
+
+        $this->seguroCesantia = new CesantiaSupport(
+            $indefinidoEmpleador,
+            $indefinidoTrabajador,
+            $plazoFijoEmpleador,
+            $indefinidoSobre11Empleador,
+            $casaParticularEmpleador
+        );
     }
 
     /**
      * get SeguroCesantia.
      *
-     * @return array
+     * @return \Gfarias\PreviScraper\CesantiaSupport
      */
-    public function getSeguroCesantia(): array
+    public function getSeguroCesantia(): CesantiaSupport
     {
         return $this->seguroCesantia;
     }
@@ -306,7 +369,7 @@ class Previred extends AbstractSource
      *
      * @return void
      */
-    public function setTopeApvMensual(): void
+    private function setTopeApvMensual(): void
     {
         $tabla = $this->dom->filter('table')->eq(4);
         $valor = $tabla->filter('td')->getNode(1)->textContent;
@@ -328,7 +391,7 @@ class Previred extends AbstractSource
      *
      * @return void
      */
-    public function setTopeAPVAnual(): void
+    private function setTopeAPVAnual(): void
     {
         $tabla = $this->dom->filter('table')->eq(4);
         $valor = $tabla->filter('td')->getNode(3)->textContent;
@@ -338,7 +401,7 @@ class Previred extends AbstractSource
     /**
      * Get the value of afpCapital.
      *
-     * @return \Gfarias\PreviService\Supports\AfpSupport
+     * @return \Gfarias\PreviScraper\AfpSupport
      */
     public function getAfpCapital(): AfpSupport
     {
@@ -350,7 +413,7 @@ class Previred extends AbstractSource
      *
      * @return  self
      */
-    public function setAfpCapital(): void
+    private function setAfpCapital(): void
     {
         $this->afpCapital = $this->getAfp(AfpSupport::CODE_CAPITAL, 4);
     }
@@ -358,7 +421,7 @@ class Previred extends AbstractSource
     /**
      * Get the value of afpCuprum.
      *
-     * @return \Gfarias\PreviService\Supports\AfpSupport
+     * @return \Gfarias\PreviScraper\AfpSupport
      */
     public function getAfpCuprum(): AfpSupport
     {
@@ -370,7 +433,7 @@ class Previred extends AbstractSource
      *
      * @return void
      */
-    public function setAfpCuprum(): void
+    private function setAfpCuprum(): void
     {
         $this->afpCuprum = $this->getAfp(AfpSupport::CODE_CUPRUM, 5);
     }
@@ -378,7 +441,7 @@ class Previred extends AbstractSource
     /**
      * Get the value of afpHabitat.
      *
-     * @return \Gfarias\PreviService\Supports\AfpSupport
+     * @return \Gfarias\PreviScraper\AfpSupport
      */
     public function getAfpHabitat(): AfpSupport
     {
@@ -390,7 +453,7 @@ class Previred extends AbstractSource
      *
      * @return void
      */
-    public function setAfpHabitat(): void
+    private function setAfpHabitat(): void
     {
         $this->afpHabitat = $this->getAfp(AfpSupport::CODE_HABITAT, 6);
     }
@@ -398,7 +461,7 @@ class Previred extends AbstractSource
     /**
      * Get the value of afpPlanVital.
      *
-     * @return \Gfarias\PreviService\Supports\AfpSupport
+     * @return \Gfarias\PreviScraper\AfpSupport
      */
     public function getAfpPlanVital(): AfpSupport
     {
@@ -418,7 +481,7 @@ class Previred extends AbstractSource
     /**
      * Get the value of afpProVida.
      *
-     * @return \Gfarias\PreviService\Supports\AfpSupport
+     * @return \Gfarias\PreviScraper\AfpSupport
      */
     public function getAfpProVida(): AfpSupport
     {
@@ -438,7 +501,7 @@ class Previred extends AbstractSource
     /**
      * Get the value of afpModelo.
      *
-     * @return \Gfarias\PreviService\Supports\AfpSupport
+     * @return \Gfarias\PreviScraper\AfpSupport
      */
     public function getAfpModelo(): AfpSupport
     {
@@ -458,7 +521,7 @@ class Previred extends AbstractSource
     /**
      * Get the value of afpUno.
      *
-     * @return \Gfarias\PreviService\Supports\AfpSupport
+     * @return \Gfarias\PreviScraper\AfpSupport
      */
     public function getAfpUno(): AfpSupport
     {
@@ -626,7 +689,7 @@ class Previred extends AbstractSource
      *
      * @param string $codigo
      * @param int $trIndex
-     * @return \Gfarias\PreviService\Supports\AfpSupport
+     * @return \Gfarias\PreviScraper\AfpSupport
      */
     private function getAfp(string $codigo, int $trIndex): AfpSupport
     {
@@ -658,7 +721,7 @@ class Previred extends AbstractSource
             'rentaMinimaImponibleParticulares' => $this->getRentaMinimaImponibleParticulares(),
             'topeApvMensual' => $this->getTopeAPVMensual(),
             'topeApvAnual' => $this->getTopeAPVAnual(),
-            'cesantia' => $this->getSeguroCesantia(),
+            'cesantia' => $this->getSeguroCesantia()->toArray(),
             'afp' => [
                 $this->getAfpCapital()->toArray(),
                 $this->getAfpCuprum()->toArray(),
