@@ -18,13 +18,13 @@ Indicadores previsionales desde Previred y tramos de impuesto desde SII
 Corre el siguiente comando en la terminal:
 
 ```bash
-composer require gfarias/larsvel-previ-service
+composer require gfarias/laravel-previ-scraper
 ```
 
 o agrega el paquete en la sección *require* en tu archivo composer.json:
 
 ```bash
-"gfarias/laravel-previ-service": "~1.0"
+"gfarias/laravel-previ-scraper": "~1.0"
 ```
 
 no te olvides de actualizar ```composer update```
@@ -214,7 +214,7 @@ Array
 | `all()`                                 |  array  |
 
 
-### `CesantiaSupport` Datos especificos del seguro de cesantía
+### `CesantiaSupport` Datos específicos del seguro de cesantía
 
 | método                            | retorno |
 |-----------------------------------|:-------:|
@@ -225,7 +225,7 @@ Array
 | `getCasaParticularEmpleador()`    |  float  |
 | `toArray()`                       |  array  |
 
-### `AfpSupport` Datos especificos de cada AFP
+### `AfpSupport` Datos específicos de cada AFP
 
 | método                            | retorno |
 |-----------------------------------|:-------:|
@@ -236,7 +236,7 @@ Array
 | `getPorcentajeIndependiente()`    |  float  |
 | `toArray()`                       |  array  |
 
-### Emeplo de uso
+### Ejemplo de uso
 
 ```php
 $previScraper = new PreviScraper();
