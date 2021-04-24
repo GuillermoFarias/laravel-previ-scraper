@@ -5,7 +5,7 @@ namespace Gfarias\PreviScraper\Sources;
 use Gfarias\PreviScraper\Converter;
 use Goutte\Client;
 
-class AbstractSource
+abstract class AbstractSource
 {
     /**
      * converter.
