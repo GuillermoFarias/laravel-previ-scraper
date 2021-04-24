@@ -1,7 +1,6 @@
 {
     "name": "gfarias/previ-service",
     "description": "Extractor de indicadores previsionales y tramos de renta (previred/sii)",
-    "license": "GPL",
     "authors": [
         {
             "name": "Guillermo Farías",
