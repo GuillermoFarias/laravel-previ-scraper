@@ -139,7 +139,7 @@ class Previred extends AbstractSource
      */
     public function getUF(): float
     {
-        return $this->converter->CLPtoFloat($this->uf);
+        return $this->convertidor->CLPtoFloat($this->uf);
     }
 
     /**
@@ -161,7 +161,7 @@ class Previred extends AbstractSource
      */
     public function getUTM(): float
     {
-        return $this->converter->CLPtoFloat($this->utm);
+        return $this->convertidor->CLPtoFloat($this->utm);
     }
 
     /**
@@ -181,7 +181,7 @@ class Previred extends AbstractSource
      */
     public function getRentaTopeImponibleAfp(): float
     {
-        return $this->converter->UFtoFloat($this->rentaTopeImponibleAfp);
+        return $this->convertidor->UFtoFloat($this->rentaTopeImponibleAfp);
     }
 
     /**
@@ -203,7 +203,7 @@ class Previred extends AbstractSource
      */
     public function getRentaTopeImponibleIps(): float
     {
-        return $this->converter->UFtoFloat($this->rentaTopeImponibleIps);
+        return $this->convertidor->UFtoFloat($this->rentaTopeImponibleIps);
     }
 
     /**
@@ -225,7 +225,7 @@ class Previred extends AbstractSource
      */
     public function getRentaTopeImponibleCesantia(): float
     {
-        return $this->converter->UFtoFloat($this->rentaTopeImponibleCesantia);
+        return $this->convertidor->UFtoFloat($this->rentaTopeImponibleCesantia);
     }
 
     /**
@@ -247,7 +247,7 @@ class Previred extends AbstractSource
      */
     public function getRentaMinimaImponibleDependiente(): float
     {
-        return $this->converter->CLPtoFloat($this->rentaMinimaImponibleDependiente);
+        return $this->convertidor->CLPtoFloat($this->rentaMinimaImponibleDependiente);
     }
 
     /**
@@ -269,7 +269,7 @@ class Previred extends AbstractSource
      */
     public function getRentaMinimaImponibleMenores(): float
     {
-        return $this->converter->CLPtoFloat($this->rentaMinimaImponibleMenores);
+        return $this->convertidor->CLPtoFloat($this->rentaMinimaImponibleMenores);
     }
 
     /**
@@ -291,7 +291,7 @@ class Previred extends AbstractSource
      */
     public function getRentaMinimaImponibleParticulares(): float
     {
-        return $this->converter->CLPtoFloat($this->rentaMinimaImponibleParticulares);
+        return $this->convertidor->CLPtoFloat($this->rentaMinimaImponibleParticulares);
     }
 
     /**
@@ -315,23 +315,23 @@ class Previred extends AbstractSource
     {
         $tabla = $this->dom->filter('table')->eq(6);
 
-        $indefinidoEmpleador = $this->converter->UFtoFloat(
+        $indefinidoEmpleador = $this->convertidor->UFtoFloat(
             $this->getUFFromText($tabla->filter('td')->getNode(6)->textContent)
         );
 
-        $indefinidoTrabajador = $this->converter->UFtoFloat(
+        $indefinidoTrabajador = $this->convertidor->UFtoFloat(
             $this->getUFFromText($tabla->filter('td')->getNode(7)->textContent)
         );
 
-        $plazoFijoEmpleador = $this->converter->UFtoFloat(
+        $plazoFijoEmpleador = $this->convertidor->UFtoFloat(
             $this->getUFFromText($tabla->filter('td')->getNode(9)->textContent)
         );
 
-        $indefinidoSobre11Empleador = $this->converter->UFtoFloat(
+        $indefinidoSobre11Empleador = $this->convertidor->UFtoFloat(
             $this->getUFFromText($tabla->filter('td')->getNode(12)->textContent)
         );
 
-        $casaParticularEmpleador = $this->converter->UFtoFloat(
+        $casaParticularEmpleador = $this->convertidor->UFtoFloat(
             $this->getUFFromText($tabla->filter('td')->getNode(15)->textContent)
         );
 
@@ -361,7 +361,7 @@ class Previred extends AbstractSource
      */
     public function getTopeApvMensual(): float
     {
-        return $this->converter->UFtoFloat($this->topeApvMensual);
+        return $this->convertidor->UFtoFloat($this->topeApvMensual);
     }
 
     /**
@@ -383,7 +383,7 @@ class Previred extends AbstractSource
      */
     public function getTopeAPVAnual(): float
     {
-        return $this->converter->UFtoFloat($this->topeApvAnual);
+        return $this->convertidor->UFtoFloat($this->topeApvAnual);
     }
 
     /**
@@ -543,7 +543,7 @@ class Previred extends AbstractSource
      */
     public function getAsignacionTramoAMonto(): float
     {
-        return $this->converter->CLPtoFloat($this->asignacionTramoAMonto);
+        return $this->convertidor->CLPtoFloat($this->asignacionTramoAMonto);
     }
 
     /**
@@ -563,7 +563,7 @@ class Previred extends AbstractSource
      */
     public function getAsignacionTramoBMonto(): float
     {
-        return $this->converter->CLPtoFloat($this->asignacionTramoBMonto);
+        return $this->convertidor->CLPtoFloat($this->asignacionTramoBMonto);
     }
 
     /**
@@ -583,7 +583,7 @@ class Previred extends AbstractSource
      */
     public function getAsignacionTramoCMonto(): float
     {
-        return $this->converter->CLPtoFloat($this->asignacionTramoCMonto);
+        return $this->convertidor->CLPtoFloat($this->asignacionTramoCMonto);
     }
 
     /**
@@ -603,7 +603,7 @@ class Previred extends AbstractSource
      */
     public function getAsignacionTramoA(): float
     {
-        return $this->converter->CLPtoFloat($this->asignacionTramoA);
+        return $this->convertidor->CLPtoFloat($this->asignacionTramoA);
     }
 
     /**
@@ -625,7 +625,7 @@ class Previred extends AbstractSource
      */
     public function getAsignacionTramoB(): float
     {
-        return $this->converter->CLPtoFloat($this->asignacionTramoB);
+        return $this->convertidor->CLPtoFloat($this->asignacionTramoB);
     }
 
     /**
@@ -647,7 +647,7 @@ class Previred extends AbstractSource
      */
     public function getAsignacionTramoC(): float
     {
-        return $this->converter->CLPtoFloat($this->asignacionTramoC);
+        return $this->convertidor->CLPtoFloat($this->asignacionTramoC);
     }
 
     /**
@@ -669,7 +669,7 @@ class Previred extends AbstractSource
      */
     public function getAsignacionTramoD(): float
     {
-        return $this->converter->CLPtoFloat($this->asignacionTramoD);
+        return $this->convertidor->CLPtoFloat($this->asignacionTramoD);
     }
 
     /**
@@ -696,9 +696,9 @@ class Previred extends AbstractSource
         $tabla = $this->dom->filter('table')->eq(7);
         $tr = $tabla->filter('tr')->eq($trIndex);
         $nombreAfp = $tr->filter('td')->getNode(0)->textContent;
-        $dependiente = $this->converter->UFtoFloat($this->getUFFromText($tr->filter('td')->getNode(1)->textContent));
-        $dependienteSis = $this->converter->UFtoFloat($this->getUFFromText($tr->filter('td')->getNode(2)->textContent));
-        $independiente = $this->converter->UFtoFloat($this->getUFFromText($tr->filter('td')->getNode(3)->textContent));
+        $dependiente = $this->convertidor->UFtoFloat($this->getUFFromText($tr->filter('td')->getNode(1)->textContent));
+        $dependienteSis = $this->convertidor->UFtoFloat($this->getUFFromText($tr->filter('td')->getNode(2)->textContent));
+        $independiente = $this->convertidor->UFtoFloat($this->getUFFromText($tr->filter('td')->getNode(3)->textContent));
 
         return new AfpSupport($nombreAfp, $codigo, $dependiente, $dependienteSis, $independiente);
     }

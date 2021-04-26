@@ -156,11 +156,11 @@ class Sii extends AbstractSource
 
             $data = [
                 'periodo' => $periodo,
-                'desde' => $this->converter->CLPtoFloat($this->getCLPFromText($tds[2])),
-                'hasta' => $this->converter->CLPtoFloat($this->getCLPFromText($tds[3])),
-                'factor' => $this->converter->UFtoFloat($this->getUFFromText($tds[4])),
-                'descuento' => $this->converter->CLPtoFloat($this->getCLPFromText($tds[5])),
-                'impuesto' => $this->converter->UFtoFloat($this->getUFFromText($tds[6])),
+                'desde' => $this->Convertidor->CLPtoFloat($this->getCLPFromText($tds[2])),
+                'hasta' => $this->Convertidor->CLPtoFloat($this->getCLPFromText($tds[3])),
+                'factor' => $this->Convertidor->UFtoFloat($this->getUFFromText($tds[4])),
+                'descuento' => $this->Convertidor->CLPtoFloat($this->getCLPFromText($tds[5])),
+                'impuesto' => $this->Convertidor->UFtoFloat($this->getUFFromText($tds[6])),
             ];
             array_push($indicadores, $data);
         }
