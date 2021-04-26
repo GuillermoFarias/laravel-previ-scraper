@@ -45,13 +45,13 @@ class PreviScraper
     {
         $sii = new Sii();
 
-        if (!$month) {
+        if (! $month) {
             $month = intval(date('m'));
         }
 
         $month = self::MESES[$month];
 
-        if (!$year) {
+        if (! $year) {
             $year = date('Y');
         }
 
