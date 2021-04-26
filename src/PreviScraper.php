@@ -7,31 +7,19 @@ use Gfarias\PreviScraper\Sources\Sii;
 
 class PreviScraper
 {
-    private const ENERO = 'enero';
-    private const FEBRERO = 'febrero';
-    private const MARZO = 'marzo';
-    private const ABRIL = 'abril';
-    private const MAYO = 'mayo';
-    private const JUNIO = 'junio';
-    private const JULIO = 'julio';
-    private const AGOSTO = 'agosto';
-    private const SEPTIEMBRE = 'septiembre';
-    private const OCTUBRE = 'octubre';
-    private const NOVIEMBRE = 'noviembre';
-    private const DICIEMBRE = 'diciembre';
     private const MESES = [
-        1 => self::ENERO,
-        2 => self::FEBRERO,
-        3 => self::MARZO,
-        4 => self::ABRIL,
-        5 => self::MAYO,
-        6 => self::JUNIO,
-        7 => self::JULIO,
-        8 => self::AGOSTO,
-        9 => self::SEPTIEMBRE,
-        10 => self::OCTUBRE,
-        11 => self::NOVIEMBRE,
-        12 => self::DICIEMBRE,
+        1 => 'enero',
+        2 => 'febrero',
+        3 => 'marzo',
+        4 => 'abril',
+        5 => 'mayo',
+        6 => 'junio',
+        7 => 'julio',
+        8 => 'agosto',
+        9 => 'septiembre',
+        10 => 'octubre',
+        11 => 'noviembre',
+        12 => 'diciembre',
     ];
 
     /**
@@ -57,13 +45,13 @@ class PreviScraper
     {
         $sii = new Sii();
 
-        if (! $month) {
+        if (!$month) {
             $month = intval(date('m'));
         }
 
         $month = self::MESES[$month];
 
-        if (! $year) {
+        if (!$year) {
             $year = date('Y');
         }
 
