@@ -53,7 +53,7 @@ print_r($sii->all());
 
 ```
 
-## Sii
+## Sii - Impuesto segunda categoría
 
 > Soporta desde el año 2013+
 
