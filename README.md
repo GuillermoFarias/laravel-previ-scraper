@@ -21,14 +21,6 @@ Corre el siguiente comando en la terminal:
 composer require gfarias/laravel-previ-scraper
 ```
 
-o agrega el paquete en la sección *require* en tu archivo composer.json:
-
-```bash
-"gfarias/laravel-previ-scraper": "~1.0"
-```
-
-no te olvides de actualizar ```composer update```
-
 ## Cómo se usa
 
 Puedes utilizar el provider e inyectarlo directo en los métodos ejecutados por el framework:
