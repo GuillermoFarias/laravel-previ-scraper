@@ -21,7 +21,7 @@ class PreviredTest extends TestCase
 
     public function testValoresIndicadores()
     {
-        $filePath = dirname(__DIR__).DIRECTORY_SEPARATOR.'previred.html';
+        $filePath = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'previred.html';
         $dom = new Crawler(file_get_contents($filePath));
         $previScraper = new Previred();
         $indicadores = $previScraper->setDom($dom)->setIndicators()->all();
