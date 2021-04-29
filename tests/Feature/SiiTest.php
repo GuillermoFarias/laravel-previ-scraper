@@ -32,7 +32,6 @@ class SiiTest extends TestCase
         $previScraper->siiFromPeriod(1, 0)->all();
     }
 
-
     private function getData()
     {
         return [
@@ -78,22 +77,22 @@ class SiiTest extends TestCase
                     'hasta' => 6117360.0,
                     'factor' => 0.304,
                     'descuento' => 907408.4,
-                    'impuesto' => 15.57
+                    'impuesto' => 15.57,
                 ], [
                     'periodo' => 'mensual',
                     'desde' => 6117360.01,
                     'hasta' => 15803180.0,
                     'factor' => 0.35,
                     'descuento' => 1188806.96,
-                    'impuesto' => 27.48
+                    'impuesto' => 27.48,
                 ], [
                     'periodo' => 'mensual',
                     'desde' => 15803180.01,
                     'hasta' => 0.0,
                     'factor' => 0.4,
                     'descuento' => 1978965.96,
-                    'impuesto' => 27.48
-                ]
+                    'impuesto' => 27.48,
+                ],
             ],
             'quincenal' => [
                 [
@@ -102,21 +101,21 @@ class SiiTest extends TestCase
                     'hasta' => 344101.5,
                     'factor' => 0.0,
                     'descuento' => 0.0,
-                    'impuesto' => 0.0
+                    'impuesto' => 0.0,
                 ], [
                     'periodo' => 'quincenal',
                     'desde' => 344101.51,
                     'hasta' => 764670.0,
                     'factor' => 0.04,
                     'descuento' => 13764.06,
-                    'impuesto' => 2.2
+                    'impuesto' => 2.2,
                 ], [
                     'periodo' => 'quincenal',
                     'desde' => 764670.01,
                     'hasta' => 1274450.0,
                     'factor' => 0.08,
                     'descuento' => 44350.86,
-                    'impuesto' => 4.52
+                    'impuesto' => 4.52,
                 ], [
                     'periodo' => 'quincenal',
                     'desde' => 1274450.01,
@@ -152,7 +151,7 @@ class SiiTest extends TestCase
                     'factor' => 0.4,
                     'descuento' => 989482.98,
                     'impuesto' => 27.48,
-                ]
+                ],
             ],
             'semanal' => [
                 [
@@ -211,7 +210,7 @@ class SiiTest extends TestCase
                     'factor' => 0.4,
                     'descuento' => 461758.85,
                     'impuesto' => 27.48,
-                ]
+                ],
             ],
             'diario' => [
                 [
@@ -263,9 +262,9 @@ class SiiTest extends TestCase
                     'factor' => 0.35,
                     'descuento' => 39626.98,
                     'impuesto' => 27.48,
-                ]
+                ],
 
-            ]
+            ],
         ];
     }
 }
