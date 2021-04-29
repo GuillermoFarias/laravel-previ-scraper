@@ -130,11 +130,11 @@ class AfpSupport
     public function toArray(): array
     {
         return [
-            'nombre' => $this->nombre,
-            'codigo' => $this->codigo,
-            'dependiente' => $this->porcentajeDependiente,
-            'dependienteSis' => $this->porcentajeDependienteSis,
-            'independiente' => $this->porcentajeIndependiente,
+            'nombre' => $this->getNombre(),
+            'codigo' => $this->getCodigo(),
+            'dependiente' => $this->getPorcentajeDependiente(),
+            'dependienteSis' => $this->getPorcentajeSis(),
+            'independiente' => $this->getPorcentajeIndependiente(),
         ];
     }
 }

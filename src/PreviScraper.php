@@ -2,6 +2,7 @@
 
 namespace Gfarias\PreviScraper;
 
+use Carbon\Carbon;
 use Gfarias\PreviScraper\Sources\Previred;
 use Gfarias\PreviScraper\Sources\Sii;
 
@@ -30,7 +31,6 @@ class PreviScraper
     public function previred(): Previred
     {
         $previred = new Previred();
-
         return $previred->setIndicators();
     }
 
@@ -41,20 +41,10 @@ class PreviScraper
      * @param  int $year
      * @return \Gfarias\PreviScraper\Sources\Sii
      */
-    public function siiFromPeriod(int $month = null, int $year = null): Sii
+    public function siiFromPeriod(int $month, int $year): Sii
     {
         $sii = new Sii();
-
-        if (!$month) {
-            $month = intval(date('m'));
-        }
-
         $month = self::MESES[$month];
-
-        if (!$year) {
-            $year = date('Y');
-        }
-
         return $sii->setPeriod($month, $year);
     }
 
@@ -66,9 +56,8 @@ class PreviScraper
     public function sii(): Sii
     {
         $sii = new Sii();
-        $month = self::MESES[intval(date('m'))];
-        $year = date('Y');
-
+        $month = self::MESES[intval(Carbon::now()->format('m'))];
+        $year = Carbon::now()->format('Y');
         return $sii->setPeriod($month, $year);
     }
 }

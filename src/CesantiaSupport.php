@@ -120,11 +120,11 @@ class CesantiaSupport
     public function toArray(): array
     {
         return [
-            'indefinidoEmpleador' => $this->indefinidoEmpleador,
-            'indefinidoTrabajador' => $this->indefinidoTrabajador,
-            'plazoFijoEmpleador' => $this->plazoFijoEmpleador,
-            'indefinidoSobre11Empleador' => $this->indefinidoSobre11Empleador,
-            'casaParticularEmpleador' => $this->casaParticularEmpleador,
+            'indefinidoEmpleador' => $this->getIndefinidoEmpleador(),
+            'indefinidoTrabajador' => $this->getIndefinidoTrabajador(),
+            'plazoFijoEmpleador' => $this->getPlazoFijoEmpleador(),
+            'indefinidoSobre11Empleador' => $this->getIndefinidoSobre11Empleador(),
+            'casaParticularEmpleador' => $this->getCasaParticularEmpleador(),
         ];
     }
 }

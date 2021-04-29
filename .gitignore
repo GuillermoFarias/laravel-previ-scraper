@@ -1,2 +1,5 @@
-/vendor
+.vscode
 .phpunit.result.cache
+vendor
+coverage-report
+clover.xml

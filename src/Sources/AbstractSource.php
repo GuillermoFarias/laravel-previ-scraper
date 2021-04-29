@@ -18,19 +18,38 @@ abstract class AbstractSource
      *
      * @var \Symfony\Component\DomCrawler\Crawler
      */
-    public $dom = null;
+    public $dom;
 
     /**
      * url.
      *
      * @var string
      */
-    protected $url = '';
+    protected $url;
 
+    /**
+     * __construct
+     *
+     * @return void
+     */
     public function __construct()
     {
         $this->client = new Client();
     }
+
+    /**
+     * setIndicators
+     *
+     * @return self
+     */
+    abstract public function setIndicators(): self;
+
+    /**
+     * all
+     *
+     * @return array
+     */
+    abstract public function all(): array;
 
     /**
      * extraer clp con puntuación desde texto.
@@ -103,5 +122,17 @@ abstract class AbstractSource
         $monto = str_replace(',', '.', $monto);
 
         return floatval($monto);
+    }
+
+    /**
+     * Set dom.
+     *
+     * @param  \Symfony\Component\DomCrawler\Crawler  $dom  dom.
+     * @return  self
+     */
+    public function setDom(\Symfony\Component\DomCrawler\Crawler $dom): self
+    {
+        $this->dom = $dom;
+        return $this;
     }
 }

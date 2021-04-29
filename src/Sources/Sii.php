@@ -45,12 +45,23 @@ class Sii extends AbstractSource
         $this->dom = $this->client->request('GET', $url);
         $this->table = $this->dom->filter("#mes_$month table")->first();
 
-        if (! $this->table->first()->getNode(0)) {
+        if (!$this->table->first()->getNode(0)) {
             throw new \Exception('No data for this period');
         }
 
-        $this->setRowPsitionsPeriods();
+        $this->setIndicators();
 
+        return $this;
+    }
+
+    /**
+     * setIndicators
+     *
+     * @return self
+     */
+    public function setIndicators(): self
+    {
+        $this->setRowPositionsPeriods();
         return $this;
     }
 
@@ -60,7 +71,7 @@ class Sii extends AbstractSource
      *
      * @return void
      */
-    private function setRowPsitionsPeriods(): void
+    private function setRowPositionsPeriods(): void
     {
         foreach ($this->positions as $index => $position) {
             foreach ($this->table->filter('tr') as $i => $tr) {
@@ -156,11 +167,11 @@ class Sii extends AbstractSource
 
             $data = [
                 'periodo' => $periodo,
-                'desde' => $this->Convertidor->CLPtoFloat($this->getCLPFromText($tds[2])),
-                'hasta' => $this->Convertidor->CLPtoFloat($this->getCLPFromText($tds[3])),
-                'factor' => $this->Convertidor->UFtoFloat($this->getUFFromText($tds[4])),
-                'descuento' => $this->Convertidor->CLPtoFloat($this->getCLPFromText($tds[5])),
-                'impuesto' => $this->Convertidor->UFtoFloat($this->getUFFromText($tds[6])),
+                'desde' => $this->CLPtoFloat($this->getCLPFromText($tds[1])),
+                'hasta' => $this->CLPtoFloat($this->getCLPFromText($tds[2])),
+                'factor' => $this->UFtoFloat($this->getUFFromText($tds[3])),
+                'descuento' => $this->CLPtoFloat($this->getCLPFromText($tds[4])),
+                'impuesto' => $this->UFtoFloat($this->getUFFromText($tds[5])),
             ];
             array_push($indicadores, $data);
         }

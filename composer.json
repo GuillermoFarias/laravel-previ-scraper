@@ -19,11 +19,12 @@
         }
     ],
     "require": {
-        "php": "^7.3|^8.0",
-        "weidner/goutte": "^2.1",
-        "illuminate/support": "^7.0|^8.0"
+        "php": "^7.3",
+        "illuminate/support": "^7.0|^8.0",
+        "weidner/goutte": "^2.1"
     },
     "require-dev": {
+        "graham-campbell/testbench": "^5.6",
         "phpunit/phpunit": "^9.0"
     },
     "autoload": {
@@ -33,7 +34,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Gfarias\\PrevicScraper\\Tests\\": "tests"
+            "Gfarias\\PreviScraper\\Tests\\": "tests"
         }
     },
     "minimum-stability": "dev",
@@ -49,6 +50,12 @@
         }
     },
     "scripts": {
-        "test": "vendor/bin/phpunit"
+        "test": "vendor/phpunit/phpunit/phpunit --testsuite Feature Tests",
+        "test2": [
+            "php -n vendor/bin/phpunit"
+        ],
+        "test-cov": [
+            "XDEBUG_MODE=coverage php vendor/bin/phpunit --testdox --coverage-text --coverage-html ./coverage-report"
+        ]
     }
 }

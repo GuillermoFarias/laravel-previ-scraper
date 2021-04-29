@@ -13,8 +13,6 @@ class PreviScraperServiceProvider extends Provider
      */
     public function register(): void
     {
-        $this->app->bind(PreviScraper::class, function () {
-            return new PreviScraper();
-        });
+        $this->app->instance(PreviScraper::class, new PreviScraper());
     }
 }
