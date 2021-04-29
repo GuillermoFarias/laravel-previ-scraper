@@ -4,7 +4,6 @@ namespace Gfarias\PreviScraper\Sources;
 
 use Gfarias\PreviScraper\AfpSupport;
 use Gfarias\PreviScraper\CesantiaSupport;
-use Symfony\Component\DomCrawler\Crawler;
 
 class Previred extends AbstractSource
 {
@@ -72,119 +71,119 @@ class Previred extends AbstractSource
     private $rentaMinimaImponibleParticulares = 0.0;
 
     /**
-     * seguroCesantia
+     * seguroCesantia.
      *
      * @var \Gfarias\PreviScraper\CesantiaSupport
      */
     private $seguroCesantia;
 
     /**
-     * topeApvMensual
+     * topeApvMensual.
      *
      * @var string
      */
     private $topeApvMensual = '';
 
     /**
-     * topeApvAnual
+     * topeApvAnual.
      *
      * @var string
      */
     private $topeApvAnual = '';
 
     /**
-     * afpCapital
+     * afpCapital.
      *
      * @var \Gfarias\PreviScraper\AfpSupport
      */
     private $afpCapital;
 
     /**
-     * afpCuprum
+     * afpCuprum.
      *
      * @var \Gfarias\PreviScraper\AfpSupport
      */
     private $afpCuprum;
 
     /**
-     * afpHabitat
+     * afpHabitat.
      *
      * @var \Gfarias\PreviScraper\AfpSupport
      */
     private $afpHabitat;
 
     /**
-     * afpPlanVital
+     * afpPlanVital.
      *
      * @var \Gfarias\PreviScraper\AfpSupport
      */
     private $afpPlanVital;
 
     /**
-     * afpProVida
+     * afpProVida.
      *
      * @var \Gfarias\PreviScraper\AfpSupport
      */
     private $afpProVida;
 
     /**
-     * afpModelo
+     * afpModelo.
      *
      * @var \Gfarias\PreviScraper\AfpSupport
      */
     private $afpModelo;
 
     /**
-     * afpUno
+     * afpUno.
      *
      * @var \Gfarias\PreviScraper\AfpSupport
      */
     private $afpUno;
 
     /**
-     * asignacionTramoAMonto
+     * asignacionTramoAMonto.
      *
      * @var float
      */
     private $asignacionTramoAMonto = 0.0;
 
     /**
-     * asignacionTramoBMonto
+     * asignacionTramoBMonto.
      *
      * @var float
      */
     private $asignacionTramoBMonto = 0.0;
 
     /**
-     * asignacionTramoCMonto
+     * asignacionTramoCMonto.
      *
      * @var float
      */
     private $asignacionTramoCMonto = 0.0;
 
     /**
-     * asignacionTramoA
+     * asignacionTramoA.
      *
      * @var float
      */
     private $asignacionTramoA = 0.0;
 
     /**
-     * asignacionTramoB
+     * asignacionTramoB.
      *
      * @var float
      */
     private $asignacionTramoB = 0.0;
 
     /**
-     * asignacionTramoC
+     * asignacionTramoC.
      *
      * @var float
      */
     private $asignacionTramoC = 0.0;
 
     /**
-     * asignacionTramoD
+     * asignacionTramoD.
      *
      * @var float
      */
@@ -197,7 +196,7 @@ class Previred extends AbstractSource
      */
     public function setIndicators(): self
     {
-        if (!$this->dom) {
+        if (! $this->dom) {
             $this->dom = $this->client->request('GET', $this->url);
         }
         $this->setUF();

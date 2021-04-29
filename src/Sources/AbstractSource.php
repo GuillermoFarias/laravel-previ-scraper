@@ -28,7 +28,7 @@ abstract class AbstractSource
     protected $url;
 
     /**
-     * __construct
+     * __construct.
      *
      * @return void
      */
@@ -38,14 +38,14 @@ abstract class AbstractSource
     }
 
     /**
-     * setIndicators
+     * setIndicators.
      *
      * @return self
      */
     abstract public function setIndicators(): self;
 
     /**
-     * all
+     * all.
      *
      * @return array
      */
@@ -133,6 +133,7 @@ abstract class AbstractSource
     public function setDom(\Symfony\Component\DomCrawler\Crawler $dom): self
     {
         $this->dom = $dom;
+
         return $this;
     }
 }

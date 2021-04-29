@@ -21,7 +21,7 @@ class PreviredTest extends TestCase
 
     public function testValoresIndicadores()
     {
-        $filePath = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'previred.html';
+        $filePath = dirname(__DIR__).DIRECTORY_SEPARATOR.'previred.html';
         $dom = new Crawler(file_get_contents($filePath));
         $previScraper = new Previred();
         $indicadores = $previScraper->setDom($dom)->setIndicators()->all();
@@ -54,25 +54,25 @@ class PreviredTest extends TestCase
                     'codigo' => 33,
                     'dependiente' => 11.44,
                     'dependienteSis' => 1.94,
-                    'independiente' => 13.38
+                    'independiente' => 13.38,
                 ], [
                     'nombre' => 'Cuprum',
                     'codigo' => 3,
                     'dependiente' => 11.44,
                     'dependienteSis' => 1.94,
-                    'independiente' => 13.38
+                    'independiente' => 13.38,
                 ], [
                     'nombre' => 'Habitat',
                     'codigo' => 05,
                     'dependiente' => 11.27,
                     'dependienteSis' => 1.94,
-                    'independiente' => 13.21
+                    'independiente' => 13.21,
                 ], [
                     'nombre' => 'PlanVital',
                     'codigo' => 29,
                     'dependiente' => 11.16,
                     'dependienteSis' => 1.94,
-                    'independiente' => 13.1
+                    'independiente' => 13.1,
                 ], [
                     'nombre' => 'ProVida',
                     'codigo' => 8,
@@ -84,13 +84,13 @@ class PreviredTest extends TestCase
                     'codigo' => 34,
                     'dependiente' => 10.77,
                     'dependienteSis' => 1.94,
-                    'independiente' => 12.71
+                    'independiente' => 12.71,
                 ], [
                     'nombre' => 'Uno',
                     'codigo' => 35,
                     'dependiente' => 10.69,
                     'dependienteSis' => 1.94,
-                    'independiente' => 12.63
+                    'independiente' => 12.63,
                 ],
             ],
             'asignacionTramoAMonto' => 13401,
@@ -99,7 +99,7 @@ class PreviredTest extends TestCase
             'asignacionTramoA' => 342346,
             'asignacionTramoB' => 500033,
             'asignacionTramoC' => 779882,
-            'asignacionTramoD' => 779882
+            'asignacionTramoD' => 779882,
         ];
     }
 }
