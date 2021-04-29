@@ -44,5 +44,10 @@ jobs:
       - name: Execute tests
         run: vendor/bin/phpunit --verbose
 
-      - name: Coverage
+      - name: Codecov Coverage Reporter
         uses: codecov/codecov-action@v1
+
+      - name: Codacy Coverage Reporter
+        uses: codacy/codacy-coverage-reporter-action@1.0.0
+        with:
+          api-token: ${{ secrets.CODACY_API_TOKEN }}
