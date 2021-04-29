@@ -59,7 +59,7 @@ class Sii extends AbstractSource
      *
      * @return self
      */
-    public function setIndicators(): self
+    public function setIndicators()
     {
         $this->setRowPositionsPeriods();
 

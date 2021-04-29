@@ -42,7 +42,7 @@ abstract class AbstractSource
      *
      * @return self
      */
-    abstract public function setIndicators(): self;
+    abstract public function setIndicators();
 
     /**
      * all.

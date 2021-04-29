@@ -194,7 +194,7 @@ class Previred extends AbstractSource
      *
      * @return self
      */
-    public function setIndicators(): self
+    public function setIndicators()
     {
         if (! $this->dom) {
             $this->dom = $this->client->request('GET', $this->url);
