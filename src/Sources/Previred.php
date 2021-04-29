@@ -191,9 +191,9 @@ class Previred extends AbstractSource
     private $asignacionTramoD = 0.0;
 
     /**
-     * setear indicadores.
+     * setIndicators
      *
-     * @return \Gfarias\PreviScraper\Sources\Previred
+     * @return self
      */
     public function setIndicators(): self
     {
