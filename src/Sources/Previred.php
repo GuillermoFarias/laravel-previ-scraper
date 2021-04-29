@@ -4,7 +4,6 @@ namespace Gfarias\PreviScraper\Sources;
 
 use Gfarias\PreviScraper\AfpSupport;
 use Gfarias\PreviScraper\CesantiaSupport;
-use Symfony\Component\DomCrawler\Crawler;
 
 class Previred extends AbstractSource
 {
@@ -191,7 +190,7 @@ class Previred extends AbstractSource
     private $asignacionTramoD = 0.0;
 
     /**
-     * setIndicators
+     * setIndicators.
      *
      * @return self
      */
