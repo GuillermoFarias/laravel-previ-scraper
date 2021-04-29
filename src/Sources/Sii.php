@@ -59,7 +59,7 @@ class Sii extends AbstractSource
      *
      * @return self
      */
-    public function setIndicators(): self
+    public function setIndicators()
     {
         $this->setRowPositionsPeriods();
 
@@ -168,11 +168,11 @@ class Sii extends AbstractSource
 
             $data = [
                 'periodo' => $periodo,
-                'desde' => $this->CLPtoFloat($this->getCLPFromText($tds[1])),
-                'hasta' => $this->CLPtoFloat($this->getCLPFromText($tds[2])),
-                'factor' => $this->UFtoFloat($this->getUFFromText($tds[3])),
-                'descuento' => $this->CLPtoFloat($this->getCLPFromText($tds[4])),
-                'impuesto' => $this->UFtoFloat($this->getUFFromText($tds[5])),
+                'desde' => $this->CLPtoFloat($this->getCLPFromText($tds[2])),
+                'hasta' => $this->CLPtoFloat($this->getCLPFromText($tds[3])),
+                'factor' => $this->UFtoFloat($this->getUFFromText($tds[4])),
+                'descuento' => $this->CLPtoFloat($this->getCLPFromText($tds[5])),
+                'impuesto' => $this->UFtoFloat($this->getUFFromText($tds[6])),
             ];
             array_push($indicadores, $data);
         }

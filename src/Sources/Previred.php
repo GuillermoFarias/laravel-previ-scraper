@@ -190,11 +190,11 @@ class Previred extends AbstractSource
     private $asignacionTramoD = 0.0;
 
     /**
-     * setIndicators
+     * setIndicators.
      *
      * @return self
      */
-    public function setIndicators(): self
+    public function setIndicators()
     {
         if (! $this->dom) {
             $this->dom = $this->client->request('GET', $this->url);
