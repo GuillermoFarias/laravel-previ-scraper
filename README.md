@@ -1,6 +1,7 @@
 # Laravel PreviScraper 
 ## Indicadores previsionales Chile 🇨🇱
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5286dac1f27948a8b585db0122916740)](https://app.codacy.com/gh/GuillermoFarias/laravel-previ-scraper?utm_source=github.com&utm_medium=referral&utm_content=GuillermoFarias/laravel-previ-scraper&utm_campaign=Badge_Grade_Settings)
 [![tests](https://github.com/GuillermoFarias/laravel-previ-scraper/actions/workflows/tests.yml/badge.svg?branch=master)](https://github.com/GuillermoFarias/laravel-previ-scraper/actions/workflows/tests.yml)
 [![codecov](https://codecov.io/gh/GuillermoFarias/laravel-previ-scraper/branch/master/graph/badge.svg?token=HVGSSZKQOC)](https://codecov.io/gh/GuillermoFarias/laravel-previ-scraper)
 [![CodeFactor](https://www.codefactor.io/repository/github/guillermofarias/laravel-previ-scraper/badge)](https://www.codefactor.io/repository/github/guillermofarias/laravel-previ-scraper)
@@ -20,14 +21,6 @@ Corre el siguiente comando en la terminal:
 ```bash
 composer require gfarias/laravel-previ-scraper
 ```
-
-o agrega el paquete en la sección *require* en tu archivo composer.json:
-
-```bash
-"gfarias/laravel-previ-scraper": "~1.0"
-```
-
-no te olvides de actualizar ```composer update```
 
 ## Cómo se usa
 
