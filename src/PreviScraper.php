@@ -31,6 +31,7 @@ class PreviScraper
     public function previred(): Previred
     {
         $previred = new Previred();
+
         return $previred->setIndicators();
     }
 
@@ -45,6 +46,7 @@ class PreviScraper
     {
         $sii = new Sii();
         $month = self::MESES[$month];
+
         return $sii->setPeriod($month, $year);
     }
 
@@ -58,6 +60,7 @@ class PreviScraper
         $sii = new Sii();
         $month = self::MESES[intval(Carbon::now()->format('m'))];
         $year = Carbon::now()->format('Y');
+
         return $sii->setPeriod($month, $year);
     }
 }
