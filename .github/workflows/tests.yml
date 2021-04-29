@@ -35,7 +35,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: dom, curl, libxml, mbstring, zip, pcntl, gd
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, gd, xdebug
           coverage: xdebug
 
       - name: Install dependencies
