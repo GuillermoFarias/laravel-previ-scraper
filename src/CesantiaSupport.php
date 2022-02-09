@@ -41,11 +41,12 @@ class CesantiaSupport
 
     /**
      * __construct.
-     * @param  float $indefinidoEmpleador
-     * @param  float $indefinidoTrabajador
-     * @param  float $plazoFijoEmpleador
-     * @param  float $indefinidoSobre11Empleador
-     * @param  float $casaParticularEmpleador
+     *
+     * @param  float  $indefinidoEmpleador
+     * @param  float  $indefinidoTrabajador
+     * @param  float  $plazoFijoEmpleador
+     * @param  float  $indefinidoSobre11Empleador
+     * @param  float  $casaParticularEmpleador
      * @return void
      */
     public function __construct(
@@ -65,7 +66,7 @@ class CesantiaSupport
     /**
      * Get indefinidoEmpleador.
      *
-     * @return  float
+     * @return float
      */
     public function getIndefinidoEmpleador(): float
     {
@@ -75,7 +76,7 @@ class CesantiaSupport
     /**
      * Get indefinidoTrabajador.
      *
-     * @return  float
+     * @return float
      */
     public function getIndefinidoTrabajador(): float
     {
@@ -85,7 +86,7 @@ class CesantiaSupport
     /**
      * Get plazoFijoEmpleador.
      *
-     * @return  float
+     * @return float
      */
     public function getPlazoFijoEmpleador(): float
     {
@@ -95,7 +96,7 @@ class CesantiaSupport
     /**
      * Get indefinidoSobre11Empleador.
      *
-     * @return  float
+     * @return float
      */
     public function getIndefinidoSobre11Empleador(): float
     {
@@ -105,7 +106,7 @@ class CesantiaSupport
     /**
      * Get casaParticularEmpleador.
      *
-     * @return  float
+     * @return float
      */
     public function getCasaParticularEmpleador(): float
     {

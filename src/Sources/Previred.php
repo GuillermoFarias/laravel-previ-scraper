@@ -196,7 +196,7 @@ class Previred extends AbstractSource
      */
     public function setIndicators()
     {
-        if (! $this->dom) {
+        if (!$this->dom) {
             $this->dom = $this->client->request('GET', $this->url);
         }
         $this->setUF();
@@ -507,7 +507,7 @@ class Previred extends AbstractSource
     /**
      * Set the value of afpCapital.
      *
-     * @return  self
+     * @return self
      */
     private function setAfpCapital(): void
     {
@@ -636,6 +636,8 @@ class Previred extends AbstractSource
 
     /**
      * Get the value of asignacionTramoAMonto.
+     *
+     * @return float
      */
     public function getAsignacionTramoAMonto(): float
     {
@@ -656,6 +658,8 @@ class Previred extends AbstractSource
 
     /**
      * Get the value of asignacionTramoBMonto.
+     *
+     * @return float
      */
     public function getAsignacionTramoBMonto(): float
     {
@@ -676,6 +680,8 @@ class Previred extends AbstractSource
 
     /**
      * Get the value of asignacionTramoCMonto.
+     *
+     * @return float
      */
     public function getAsignacionTramoCMonto(): float
     {
@@ -696,6 +702,8 @@ class Previred extends AbstractSource
 
     /**
      * Get the value of asignacionTramoA.
+     *
+     * @return float
      */
     public function getAsignacionTramoA(): float
     {
@@ -727,9 +735,9 @@ class Previred extends AbstractSource
     /**
      * Set the value of asignacionTramoB.
      *
-     * @return  self
+     * @return void
      */
-    public function setAsignacionTramoB()
+    public function setAsignacionTramoB(): void
     {
         $tabla = $this->dom->filter('table')->eq(8);
         $valor = $tabla->filter('td')->getNode(9)->textContent;
@@ -783,8 +791,8 @@ class Previred extends AbstractSource
     /**
      * generar afp support.
      *
-     * @param string $codigo
-     * @param int $trIndex
+     * @param  string  $codigo
+     * @param  int  $trIndex
      * @return \Gfarias\PreviScraper\AfpSupport
      */
     private function getAfp(string $codigo, int $trIndex): AfpSupport

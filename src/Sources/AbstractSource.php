@@ -99,7 +99,7 @@ abstract class AbstractSource
      * Convertir UF a Pesos Chilenos
      * "34,6" => 34.6.
      *
-     * @param string $monto
+     * @param  string  $monto
      * @return float
      */
     public function UFtoFloat(string $monto): float
@@ -113,7 +113,7 @@ abstract class AbstractSource
      * Convertir CLP a número
      * "234.568,34" => 234568.34.
      *
-     * @param string $monto
+     * @param  string  $monto
      * @return float
      */
     public function CLPtoFloat(string $monto): float
@@ -128,7 +128,7 @@ abstract class AbstractSource
      * Set dom.
      *
      * @param  \Symfony\Component\DomCrawler\Crawler  $dom  dom.
-     * @return  self
+     * @return self
      */
     public function setDom(\Symfony\Component\DomCrawler\Crawler $dom): self
     {
