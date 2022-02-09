@@ -53,9 +53,9 @@ class AfpSupport
      *
      * @param string $nombre
      * @param string $codigo
-     * @param float  $porcentajeDependiente
-     * @param float  $porcentajeDependienteSis
-     * @param float  $porcentajeIndependiente
+     * @param float $porcentajeDependiente
+     * @param float $porcentajeDependienteSis
+     * @param float $porcentajeIndependiente
      * @return void
      */
     public function __construct(
