@@ -238,3 +238,5 @@ $rentaTopeImponible = $previred->getRentaTopeImponibleCesantia();
 $porcentajeSisAfpHabitat = $previred->getAfpHabitat()->getPorcentajeSis();
 $aporteCesantiaEmpleadorPlazoFijo = $previred->getSeguroCesantia()->getPlazoFijoEmpleador();
 ```
+
+❤️
