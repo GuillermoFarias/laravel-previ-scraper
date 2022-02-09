@@ -38,8 +38,8 @@ class PreviScraper
     /**
      * obtener indicadores de Sii de un periodo específico pasando año y mes.
      *
-     * @param  string $month
-     * @param  int $year
+     * @param  string  $month
+     * @param  int  $year
      * @return \Gfarias\PreviScraper\Sources\Sii
      */
     public function siiFromPeriod(int $month, int $year): Sii

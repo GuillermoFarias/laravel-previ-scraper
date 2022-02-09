@@ -35,8 +35,8 @@ class Sii extends AbstractSource
     /**
      * establecer periodo mediante mes y año.
      *
-     * @param  string $month
-     * @param  int $year
+     * @param  string  $month
+     * @param  int  $year
      * @return \Gfarias\PreviScraper\Sources\Sii
      */
     public function setPeriod(string $month, int $year): Sii
@@ -155,8 +155,8 @@ class Sii extends AbstractSource
     /**
      * getIndicatorsFromTable.
      *
-     * @param  int $inicio
-     * @param  int $fin
+     * @param  int  $inicio
+     * @param  int  $fin
      * @return array
      */
     private function getIndicatorsFromTable(string $periodo, int $inicio, int $fin): array
